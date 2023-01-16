@@ -42,6 +42,17 @@ Node* append(Node* head, int item) {
     return head;
 }
 
+//return linked list length...
+int get_length(Node* head) {
+    Node* a = head;
+    int length = 0;
+    while(a != NULL){
+        length++;
+        a = a->next;
+    }
+    return length;
+}
+
 //print linked list...
 void print_linked_list(Node* head) {
     Node* current_node = head;
@@ -64,7 +75,8 @@ int main() {
 
     head = Prepend(head, 20);
 
-
     print_linked_list(head);
-    return 0;
+    printf("%d", get_length(head));
+
+return 0;
 }
