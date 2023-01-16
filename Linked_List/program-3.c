@@ -56,6 +56,29 @@ int Search_Item(Node* head, int item) {
     return - 1;
 }
 
+//remove node in linked list...
+Node* Remove_Node(Node* head, Node* node) {
+    if(node == head){
+        head = node->next;
+        free(node);
+        return head;
+    }
+    Node* current_node = head;
+    while(current_node != NULL){
+        if(current_node->next == node){
+            break;
+        }
+        current_node = current_node->next;
+    }
+
+    if(current_node == NULL){
+        return head;
+    }
+    current_node->next = node->next;
+    free(node);
+    return head;
+}
+
 //return linked list length...
 int get_length(Node* head) {
     Node* a = head;
@@ -79,19 +102,22 @@ void print_linked_list(Node* head) {
 
 
 int main() {
-    Node* head, *n1;
+    Node* head, *n1, *n2;
     n1 = Create_Node(10, NULL);
     head = n1;
     head = append(head, 20);
     head = append(head, 30);
     head = append(head, 40);
     head = append(head, 50);
+    Node* n = append(head, 100);
 
-    head = Prepend(head, 20);
+    head = Remove_Node(head, n);
+
+    head = Prepend(head, 75);
 
     print_linked_list(head);
     printf("%d \n", get_length(head));
-    printf("%d", Search_Item(head, 30));
+    printf("Item found at index: %d", Search_Item(head, 30));
 
 return 0;
 }
