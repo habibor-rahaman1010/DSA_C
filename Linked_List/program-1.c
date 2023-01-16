@@ -10,7 +10,7 @@ struct Node {
 };
 
 //create a new node in linked list...
-Node* Creat_Node(int item, Node* next) {
+Node* Create_Node(int item, Node* next) {
     Node* new_node = (Node*) malloc(sizeof(Node));
     if(new_node == NULL){
         printf("Error! could not a create a new node \n");
@@ -24,7 +24,7 @@ Node* Creat_Node(int item, Node* next) {
 
 //inset at head new node i linked list...
 Node* Prepend(Node* head, int item) {
-    Node* new_node = Creat_Node(item, head);
+    Node* new_node = Create_Node(item, head);
     return new_node;
 }
 
@@ -32,7 +32,7 @@ int main() {
     Node* head;
     Node* n1, *n2, *n3, *n4, *n5, *n6, *n7;
 
-    n1 = Creat_Node(10, NULL);
+    n1 = Create_Node(10, NULL);
     head = n1;
 
     head = Prepend(head, 20);
