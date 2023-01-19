@@ -31,17 +31,17 @@ Node* Create_Node(int ara[], int length) {
 }
 
 Node* Print_Reverse(Node* head) {
-    Node* prv = NULL;
+    Node* priviou = NULL;
     Node* current = head;
-    Node* next = head->next;
+    Node* next = NULL;
 
     while(current != NULL) {
-        prv = current->next;
-        current->next = prv;
-        prv = current;
+        next = current->next;
+        current->next = priviou;
+        priviou = current;
         current = next;
     }
-    return prv;
+    return priviou;
 }
 
 int main() {
