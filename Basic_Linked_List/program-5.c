@@ -29,6 +29,20 @@ Node* Create_Node(int ara[], int length) {
     return head;
 }
 
+//Insert at head in linked list...
+void InsertAtHead(Node* head, int item) {
+    Node* new_node = (Node *) malloc(sizeof(Node));
+    new_node->data = item;
+    new_node->next = head;
+    head = new_node;
+
+    Node* a = head;
+    while(a != NULL){
+        printf("%d ", a->data);
+        a = a->next;
+    }
+}
+
 int main() {
     int ara[] = {12, 23, 14, 16, 25};
     int length  = sizeof(ara) / sizeof(ara[0]);
@@ -40,5 +54,6 @@ int main() {
     }
     printf("\n");
 
+    InsertAtHead(Create_Node(ara, length), 100);
 return 0;
 }
