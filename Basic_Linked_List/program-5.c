@@ -41,6 +41,28 @@ void InsertAtHead(Node* head, int item) {
         printf("%d ", a->data);
         a = a->next;
     }
+    printf("\n");
+}
+
+void InsertAtTail(Node* head, int item){
+    Node* new_node = (Node *) malloc(sizeof(Node));
+    new_node->data = item;
+    new_node->next = NULL;
+
+    Node* a = head;
+    while(a->next != NULL){
+        a = a->next;
+    };
+    a->next  = new_node;
+}
+
+
+//print linked list function...
+void PrintLinkedList(Node* head){
+    while(head != NULL){
+        printf("%d ", head->data);
+        head = head->next;
+    }
 }
 
 int main() {
@@ -48,12 +70,12 @@ int main() {
     int length  = sizeof(ara) / sizeof(ara[0]);
 
     Node* head = Create_Node(ara, length);
-    while(head != NULL){
-        printf("%d ", head->data);
-        head = head->next;
-    }
+
     printf("\n");
 
-    InsertAtHead(Create_Node(ara, length), 100);
+    InsertAtHead(head, 100);
+    InsertAtTail(head, 200);
+    PrintLinkedList(head);
+
 return 0;
 }
