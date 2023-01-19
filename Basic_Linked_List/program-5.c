@@ -27,6 +27,7 @@ Node* Create_Node(int ara[], int length) {
         }
     }
     return head;
+}
 
 int main() {
     int ara[] = {12, 23, 14, 16, 25};
