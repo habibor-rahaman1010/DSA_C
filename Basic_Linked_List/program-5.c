@@ -71,8 +71,8 @@ int main() {
 
     Node* head = Create_Node(ara, length);
 
+    PrintLinkedList(head);
     printf("\n");
-
     InsertAtHead(head, 100);
     InsertAtTail(head, 200);
     PrintLinkedList(head);
