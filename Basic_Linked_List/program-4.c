@@ -50,6 +50,7 @@ int main() {
 
     Node* head = Create_Node(ara, length);
 
+    //print in the linked list...
     Node* a = head;
     while(a != NULL){
         printf("%d ", a->data);
@@ -57,6 +58,7 @@ int main() {
     }
     printf("\n");
 
+    //print reverse the linked list...
     Node* b = Print_Reverse(head);
     while(b != NULL){
         printf("%d ", b->data);
